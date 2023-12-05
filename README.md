@@ -86,3 +86,13 @@ As a user, I should be able to add an app shortcut to my home screen so that I m
 As a user, I should be able to view charts displaying event details so that I may learn more about that event.
 #### Scenario: Show a chart with the number of upcoming events in each city
 **Given** the user is on the events page, **when** the user view the chart for event distribution by city, **then** the app should display a chart showing the number of upcoming events in each city.
+
+## How Serverless Functions Will Be Used
+In the context of the Meet app, serverless functions will be used to:
+* Fetch Google Calendar events: Serverless architecture ensures seamless scalability to handle varying loads of calendar data fetching.
+* Work offline: When the app is offline, these functions can handle the retrieval and display of cached data from the previous user session.
+* Create a shortcut for the app on the device's home screen
+* Filter events and process data: Assist in processing and filtering events by city, as well as handling the logic for specifying and displaying the number of events.
+* Generate real-time charts visualizing event details
+* Handle errors due to changes to search settings while offline
+
