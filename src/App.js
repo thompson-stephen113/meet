@@ -1,5 +1,6 @@
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
+import NumberOfEvents from './components/NumberOfEvents';
 
 import './App.css';
 
@@ -8,6 +9,7 @@ const App = () => {
     <div className="App">
       <EventList />
       <CitySearch />
+      <NumberOfEvents />
     </div>
   );
 }
