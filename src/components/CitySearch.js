@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
@@ -23,7 +23,15 @@ const CitySearch = ({ allLocations }) => {
 
         // Hides the list
         setShowSuggestions(false);
+
+        // Sets current city
+        setCurrentCity(value);
     };
+
+    // Initializes local state suggestions to have the default value as the same array as allLocations
+    useEffect(() => {
+        setSuggestions(allLocations);
+    }, [`${allLocations}`]);
 
     return (
         <div id="city-search">
