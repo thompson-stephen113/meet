@@ -24,14 +24,16 @@ const App = () => {
     const allEvents = await getEvents();
 
     // Filters out list of events based on value of currentCity, otherwise renders all events
-    const filteredEvents = currentCity === "See all cities" ?
-      allEvents :
-      allEvents.filter(event => event.location === currentCity)
+    if (allEvents) {
+      const filteredEvents = currentCity === "See all cities" ?
+        allEvents :
+        allEvents.filter(event => event.location === currentCity)
 
-    setEvents(filteredEvents.slice(0, currentNOE));
+      setEvents(filteredEvents.slice(0, currentNOE));
 
-    // Initializes allLocations state
-    setAllLocations(extractLocations(allEvents));
+      // Initializes allLocations state
+      setAllLocations(extractLocations(allEvents));
+    };
   };
 
   // Calls fetchData() when the App component is mounted
