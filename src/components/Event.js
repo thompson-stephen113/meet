@@ -12,6 +12,7 @@ const Event = ({ event }) => {
 
             {/* show details/hide details button */}
             <button
+                className="details-btn"
                 onClick={() => {
                     setShowDetails(!showDetails);
                 }}
