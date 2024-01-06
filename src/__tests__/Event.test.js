@@ -1,7 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
-/* eslint-disable testing-library/prefer-presence-queries */
-/* eslint-disable testing-library/prefer-screen-queries */
-/* eslint-disable testing-library/no-render-in-setup */
 import { render } from "@testing-library/react";
 import { getEvents } from "../api";
 import userEvent from "@testing-library/user-event";
