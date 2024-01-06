@@ -1,6 +1,3 @@
-/* eslint-disable testing-library/render-result-naming-convention */
-/* eslint-disable testing-library/no-render-in-setup */
-/* eslint-disable testing-library/no-node-access */
 import { render, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { getEvents } from "../api";
