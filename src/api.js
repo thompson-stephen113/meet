@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-concat */
 import mockData from "./mock-data";
 
 // @param {*} events:
