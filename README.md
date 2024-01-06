@@ -59,8 +59,8 @@ As a user, I should be able to show and hide event details so that I can see inf
 
 ### <ins>Feature 3: Specify Number of Events</ins>
 As a user, I should be able to specify a number of events to view so that I can choose the number of events I want to see at a time.
-#### Scenario 1: When user has not specified a number, 20 events are shown by default
-**Given** the user is on the events page, **when** the user has not specified a number of events to display, **then** the app should show 20 events by default.
+#### Scenario 1: When user has not specified a number, 32 events are shown by default
+**Given** the user is on the events page, **when** the user has not specified a number of events to display, **then** the app should show 32 events by default.
 #### Scenario 2: User can change the number of events displayed
 **Given** the user has not specified a number of events, **when** the user chooses a number to be displayed, **then** the app should show the specified number of events.
 
