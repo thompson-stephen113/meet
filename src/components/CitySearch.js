@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const CitySearch = ({ allLocations, setCurrentCity }) => {
+const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
@@ -15,6 +15,16 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
         // Sets the Query local state to the input value
         setQuery(value);
         setSuggestions(filteredLocations);
+
+        // Returns a message if the list contains no suggestions
+        let infoText;
+        if (filteredLocations.length === 0) {
+            infoText = "We cannot find the city you are looking for. Please try another city."
+        } else {
+            infoText = ""
+        }
+
+        setInfoAlert(infoText);
     };
 
     const handleItemClicked = (event) => {
@@ -26,6 +36,9 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
 
         // Sets current city
         setCurrentCity(value);
+
+        // Removes InfoAlert's message
+        setInfoAlert("");
     };
 
     // Initializes local state suggestions to have the default value as the same array as allLocations
