@@ -1,4 +1,5 @@
 import { useState } from "react";
+import moment from "moment";
 
 const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false);
@@ -7,7 +8,7 @@ const Event = ({ event }) => {
         // Event item
         <li className="event">
             <div className="summary">{event.summary}</div>
-            <div className="startTime">{event.created}</div>
+            <div className="startTime">{moment(event.start.dateTime).format("MMMM Do YYYY, h:mm a")}</div>
             <div className="location">{event.location}</div>
 
             {/* show details/hide details button */}
