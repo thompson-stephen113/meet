@@ -3,6 +3,7 @@ import { extractLocations, getEvents } from './api';
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
+import { InfoAlert } from "./components/Alert";
 
 import './App.css';
 
@@ -18,6 +19,9 @@ const App = () => {
 
 	// Sets state for the current city
 	const [currentCity, setCurrentCity] = useState("See all cities");
+
+	// Represents the text displayed in the info alert
+	const [infoAlert, setInfoAlert] = useState("");
 
 	// Populates the events state with the fetched events list
 	const fetchData = async () => {
@@ -42,7 +46,14 @@ const App = () => {
 	return (
 		<div className="App">
 			<h1>Meet!</h1>
-			<CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity}/>
+			<div className="alerts-container">
+				{infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
+			</div>
+			<CitySearch 
+				allLocations={allLocations} 
+				setCurrentCity={setCurrentCity}
+				setInfoAlert={setInfoAlert}
+			/>
 			<NumberOfEvents setCurrentNOE={setCurrentNOE}/>
 			<EventList events={events}/>
 		</div>
