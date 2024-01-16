@@ -41,7 +41,10 @@ defineFeature(feature, test => {
         let input;
 
         given("the user has not specified a number of events", async () => {
-            NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
+            NumberOfEventsComponent = render(<NumberOfEvents 
+                setCurrentNOE={() => { }}
+                setErrorAlert={() => { }}
+            />);
         });
 
         when("the user chooses a number to be displayed", () => {
