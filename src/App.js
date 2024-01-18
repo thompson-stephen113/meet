@@ -3,7 +3,7 @@ import { extractLocations, getEvents } from './api';
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
-import { InfoAlert, ErrorAlert } from "./components/Alert";
+import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
 
 import './App.css';
 
@@ -26,6 +26,9 @@ const App = () => {
 	// Sets state for text displayed in the error alert
 	const [errorAlert, setErrorAlert] = useState("");
 
+	// Sets state for text displayed in the warning alert
+	const [warningAlert, setWarningAlert] = useState("");
+
 	// Populates the events state with the fetched events list
 	const fetchData = async () => {
 		const allEvents = await getEvents();
@@ -43,6 +46,11 @@ const App = () => {
 
   	// Calls fetchData() when the App component is mounted
 	useEffect(() => {
+		if (navigator.onLine) {
+			setWarningAlert("");
+		} else {
+			setWarningAlert("You are currently offline. Displayed list is loaded from the cache.")
+		}
 		fetchData();
 	}, [currentCity, currentNOE]);
 
@@ -52,6 +60,7 @@ const App = () => {
 			<div className="alerts-container">
 				{infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
 				{errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
+				{warningAlert.length ? <WarningAlert text={warningAlert}/> : null}
 			</div>
 			<CitySearch 
 				allLocations={allLocations} 
