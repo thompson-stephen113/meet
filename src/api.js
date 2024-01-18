@@ -54,6 +54,12 @@ export const getEvents = async () => {
         return mockData;
     };
 
+    // Check if the user is offline
+    if (!navigator.onLine) {
+        const events = localStorage.getItem("lastEvents");
+        return events ? JSON.parse(events) : [];
+    };
+
     const token = await getAccessToken();
 
     if (token) {
@@ -69,11 +75,7 @@ export const getEvents = async () => {
     }
 };
 
-// Check if the user is offline
-if (!navigator.onLine) {
-    const events = localStorage.getItem("lastEvents");
-    return events ? JSON.parse(events) : [];
-}
+
 
 // Gets access token for users to access Google Calendar API
 export const getAccessToken = async () => {
