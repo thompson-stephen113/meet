@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import { getEvents } from "../api";
+import moment from "moment";
 import userEvent from "@testing-library/user-event";
 import Event from "../components/Event";
 
@@ -22,7 +23,7 @@ describe("<Event /> component", () => {
 
     // Test "renders event start time"
     test("renders event start time", () => {
-        expect(EventComponent.queryByText(allEvents[0].created)).toBeInTheDocument();
+        expect(EventComponent.queryByText(moment(allEvents[0].start.dateTime).format("MMMM Do YYYY, h:mm a"))).toBeInTheDocument();
     });
 
     // Test "renders event location"
