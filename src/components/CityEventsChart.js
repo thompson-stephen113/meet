@@ -14,7 +14,7 @@ const CityEventsChart = ({ allLocations, events}) => {
     const getData = () => {
         const data = allLocations.map((location) => {
             const count = events.filter((event) => event.location === location).length;
-            const city = location.split(", ")[0];
+            const city = location.split((/, | - /))[0];
 
             return { city, count };
         });
@@ -32,8 +32,8 @@ const CityEventsChart = ({ allLocations, events}) => {
                 margin={{
                 top: 20,
                 right: 20,
-                bottom: 20,
-                left: 20,
+                bottom: 60,
+                left: -30,
                 }}
             >
                 <CartesianGrid />
@@ -50,7 +50,7 @@ const CityEventsChart = ({ allLocations, events}) => {
                     dataKey="count"
                     name="Number of events"
                     allowDecimals={false}
-                    tickFormatter={(value) => parseInt(value, 1)}    
+                    tickFormatter={(value) => parseInt(value, 10)}    
                 />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                 <Scatter name="A school" data={data} fill="#8884d8" />
