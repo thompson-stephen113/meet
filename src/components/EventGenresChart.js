@@ -60,6 +60,7 @@ const EventGenresChart = ({ events }) => {
 	return (
 		<ResponsiveContainer width="99%" height={400}>
 			<PieChart >
+				<Legend />
 				<Pie
 					data={data}
 					dataKey="value"
@@ -75,7 +76,6 @@ const EventGenresChart = ({ events }) => {
 						/>
         			))}
 				</Pie>
-				<Legend />
 			</PieChart>
 		</ResponsiveContainer>
 	);
