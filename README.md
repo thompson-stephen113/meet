@@ -1,7 +1,7 @@
 # meet
 
 ## Overview
-Meet is a project for a web application to build a serverless, progressive web application (PWA) technique. The application uses the Google Calendar API to fetch upcoming events.
+Meet is a project for a web application to build a serverless, progressive web application (PWA) with React using a test-driven development technique. The application uses the Google Calendar API to fetch upcoming events.
 
 ## Key Features
 * Filter events by city
