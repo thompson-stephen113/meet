@@ -15,9 +15,12 @@ Meet is a project for a web application to build a serverless, progressive web a
 * "@testing-library/jest-dom" (v. 5.17.0)
 * "@testing-library/react" (v. 13.4.0)
 * "@testing-library/user-event" (v. 13.5.0)
+* "atatus-spa": (v. 4.6.0)
+* "moment": (v. 2.30.1)
 * "react" (v. 18.2.0)
 * "react-dom" (v. 18.2.0)
 * "react-scripts" (v. 5.0.1)
+* "recharts": (v. 2.10.4)
 * "web-vitals" (v. 2.1.4)
 * "workbox-background-sync" (v. 6.6.0)
 * "workbox-broadcast-update" (v. 6.6.0)
@@ -85,7 +88,7 @@ As a user, I should be able to add an app shortcut to my home screen so that I m
 ### <ins>Feature 6: Display Charts Visualizing Event Details</ins>
 As a user, I should be able to view charts displaying event details so that I may learn more about that event.
 #### Scenario: Show a chart with the number of upcoming events in each city
-**Given** the user is on the events page, **when** the user view the chart for event distribution by city, **then** the app should display a chart showing the number of upcoming events in each city.
+**Given** the user is on the events page, **when** the user views the chart for event distribution by city, **then** the app should display a chart showing the number of upcoming events in each city.
 
 ## How Serverless Functions Will Be Used
 In the context of the Meet app, serverless functions will be used to:
